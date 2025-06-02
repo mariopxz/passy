@@ -71,17 +71,21 @@ export const Card = () => {
     setStrengthLabel(label);
   }, [password]);
 
+  let bgStrengthColor = "";
   let strengthColor = "";
   let strengthIcon = null;
 
   if (strengthLabel === "Weak") {
-    strengthColor = "red-500";
+    bgStrengthColor = "bg-red-500";
+    strengthColor = "text-red-500";
     strengthIcon = <WeakIcon size={20} />;
   } else if (strengthLabel === "Medium") {
-    strengthColor = "yellow-400";
+    bgStrengthColor = "bg-yellow-400";
+    strengthColor = "text-yellow-400";
     strengthIcon = <MediumIcon size={20} />;
   } else if (strengthLabel === "Strong") {
-    strengthColor = "green-500";
+    bgStrengthColor = "bg-green-500";
+    strengthColor = "text-green-500";
     strengthIcon = <LightningIcon size={20} />;
   }
 
@@ -146,14 +150,14 @@ export const Card = () => {
             Password Strength
           </p>
           <p
-            className={`flex gap-2 text-md font-medium mt-2 items-center text-${strengthColor}`}
+            className={`flex gap-2 text-md font-medium mt-2 items-center ${strengthColor}`}
           >
             {strengthIcon}
             {strengthLabel}
           </p>
         </div>
 
-        <Progress value={strengthScore} indicatorColor={strengthColor} />
+        <Progress value={strengthScore} indicatorColor={bgStrengthColor} />
       </div>
 
       <div className="flex flex-col gap-4 my-4">
