@@ -1,6 +1,7 @@
 type PasswordOptions = {
   length: number;
   includeUppercase: boolean;
+  includeLowercase: boolean;
   includeNumbers: boolean;
   includeSpecialCharacters: boolean;
 }
@@ -8,6 +9,7 @@ type PasswordOptions = {
 export function generatePassword({
   length,
   includeUppercase,
+  includeLowercase,
   includeNumbers,
   includeSpecialCharacters
 }: PasswordOptions): string {
@@ -16,7 +18,8 @@ export function generatePassword({
   const numbers = '0123456789';
   const specialCharacters = '!@#$%^&*()_+[]{}|;:,.<>?';
 
-  let chars = lowercase;
+  let chars = '';
+  if (includeLowercase) chars += lowercase;
   if (includeUppercase) chars += uppercase;
   if(includeNumbers) chars += numbers;
   if (includeSpecialCharacters) chars += specialCharacters;

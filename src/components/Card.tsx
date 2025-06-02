@@ -17,6 +17,7 @@ import { MediumIcon } from "./Icons/MediumIcon";
 import { WeakIcon } from "./Icons/WeakIcon";
 import { MagicWandIcon } from "./Icons/MagicWandIcon";
 import { UpperCaseIcon } from "./Icons/UpperCaseIcon";
+import { LowerCaseIcon } from "./Icons/LowerCaseIcon";
 import { NumbersIcon } from "./Icons/NumbersIcon";
 import { SpecialCharactersIcon } from "./Icons/SpecialCharactersIcon";
 
@@ -28,6 +29,7 @@ export const Card = () => {
   const [copied, setCopied] = useState(false);
   const [isSpinning, setIsSpinning] = useState(false);
   const [includeUppercase, setIncludeUppercase] = useState(true);
+  const [includeLowercase, setIncludeLowercase] = useState(true);
   const [includeNumbers, setIncludeNumbers] = useState(true);
   const [includeSymbols, setIncludeSymbols] = useState(true);
 
@@ -48,6 +50,7 @@ export const Card = () => {
     const newPassword = generatePassword({
       length,
       includeUppercase,
+      includeLowercase,
       includeNumbers,
       includeSpecialCharacters: includeSymbols,
     });
@@ -88,6 +91,12 @@ export const Card = () => {
     strengthColor = "text-green-500";
     strengthIcon = <LightningIcon size={20} />;
   }
+
+  const selectedCount =
+    Number(includeUppercase) +
+    Number(includeLowercase) +
+    Number(includeNumbers) +
+    Number(includeSymbols);
 
   return (
     <div className="bg-[#09090b] mt-2 px-4 py-2 rounded-md w-full">
@@ -180,12 +189,13 @@ export const Card = () => {
           Character Types
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 justify-center mx-auto">
           {/* Uppercase */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 md:px-6">
             <Checkbox
               checked={includeUppercase}
               onCheckedChange={(checked) => {
+                if (!checked && selectedCount === 1) return;
                 setIncludeUppercase(!!checked);
                 handleGenerate();
               }}
@@ -196,15 +206,36 @@ export const Card = () => {
               className="text-white flex items-center gap-2 text-sm"
             >
               <UpperCaseIcon size={20} />
-              Include Uppercase
+              Uppercase (A-Z)
+            </label>
+          </div>
+
+          {/* Lowercase */}
+          <div className="flex items-center space-x-2 md:px-6">
+            <Checkbox
+              checked={includeLowercase}
+              onCheckedChange={(checked) => {
+                if (!checked && selectedCount === 1) return;
+                setIncludeLowercase(!!checked);
+                handleGenerate();
+              }}
+              id="lowercase"
+            />
+            <label
+              htmlFor="lowercase"
+              className="text-white flex items-center gap-2 text-sm"
+            >
+              <LowerCaseIcon size={20} />
+              Lowercase (a-z)
             </label>
           </div>
 
           {/* Numbers */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 md:px-6">
             <Checkbox
               checked={includeNumbers}
               onCheckedChange={(checked) => {
+                if (!checked && selectedCount === 1) return;
                 setIncludeNumbers(!!checked);
                 handleGenerate();
               }}
@@ -215,15 +246,16 @@ export const Card = () => {
               className="text-white flex items-center gap-2 text-sm"
             >
               <NumbersIcon size={20} />
-              Include Numbers
+              Numbers (0-9)
             </label>
           </div>
 
           {/* Symbols */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 md:px-6">
             <Checkbox
               checked={includeSymbols}
               onCheckedChange={(checked) => {
+                if (!checked && selectedCount === 1) return;
                 setIncludeSymbols(!!checked);
                 handleGenerate();
               }}
@@ -234,13 +266,13 @@ export const Card = () => {
               className="text-white flex items-center gap-2 text-sm"
             >
               <SpecialCharactersIcon size={20} />
-              Include Symbols
+              Symbols (!@#$) 
             </label>
           </div>
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 my-4">
+      <div className="flex flex-col gap-4 my-8 sm:my-4">
         <button
           onClick={handleGenerate}
           className="flex gap-4 items-center justify-center bg-white hover:bg-gray-200 text-black font-medium py-2 px-4 rounded-md hover:cursor-pointer transition-all duration-300"

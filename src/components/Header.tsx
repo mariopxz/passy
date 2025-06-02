@@ -2,8 +2,8 @@ import { KeyIcon } from "./Icons/KeyIcon";
 
 export const Header = () => {
   return (
-    <div className="flex flex-col gap-4">
-      <h1 className="flex items-center gap-4 text-4xl font-bold text-center text-white">
+    <div className="flex flex-col gap-4 mt-10 sm:mt-0">
+      <h1 className="flex items-center gap-4 text-3xl md:text-4xl font-bold text-center text-white">
         <KeyIcon size={36}/>
         Password Generator
       </h1>
