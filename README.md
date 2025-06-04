@@ -1,54 +1,80 @@
-# React + TypeScript + Vite
+# 🚀 Passy – Generador de Contraseñas Inteligente
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Passy** es una elegante y moderna aplicación web para generar contraseñas seguras y personalizadas. Diseñada para ser intuitiva y rápida, permite a los usuarios crear contraseñas robustas mediante configuraciones avanzadas o mediante plantillas predefinidas.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Características destacadas
 
-## Expanding the ESLint configuration
+- ✅ Generador de contraseñas personalizable por longitud y tipo de caracteres  
+- ✅ Plantillas listas para usar: PIN, Frases Memorizables, etc.  
+- ✅ Evaluación visual de la fuerza de la contraseña  
+- ✅ Feedback interactivo con animaciones (copiado, visibilidad, botones)  
+- ✅ Interfaz minimalista y responsive  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🛠️ Tecnologías utilizadas
+
+```ts
+[
+  "React",
+  "TypeScript",
+  "Tailwind CSS",
+  "Radix UI",
+  "Vite",
+  "Lucide Icons"
+]
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚙️ Instalación y uso
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/mariopxz/passy.git
+cd passy
 ```
+
+2. Instala las dependencias:
+
+```bash
+npm install
+```
+
+3. Inicia la aplicación en modo desarrollo:
+
+```bash
+npm run dev
+```
+
+4. Genera la versión de producción:
+
+```bash
+npm run build
+```
+
+---
+
+## 📸 Vista previa
+
+![Preview](https://imgur.com/a/UMMmqNe)
+![Preview](https://imgur.com/pohMMyH)
+
+---
+
+## 🧑‍💻 Autor
+
+Hecho con ❤️ por **mariopxz**
+
+📫 Conecta conmigo:  
+[🌐 tu-portfolio.dev](https://mariopxz.com)  
+[🐱 GitHub: @tuusuario](https://github.com/mariopxz)
+
+---
+
+## 📄 Licencia
+
+MIT License. © 2025 Passy.
