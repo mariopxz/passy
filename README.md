@@ -60,8 +60,8 @@ npm run build
 
 ## 📸 Vista previa
 
-![Preview](https://imgur.com/a/UMMmqNe)
-![Preview](https://imgur.com/pohMMyH)
+![Preview](https://i.imgur.com/6Xn6EPS.png)
+![Preview](https://i.imgur.com/pohMMyH.png)
 
 ---
 
