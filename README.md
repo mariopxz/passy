@@ -70,8 +70,8 @@ npm run build
 Hecho con ❤️ por **mariopxz**
 
 📫 Conecta conmigo:  
-[🌐 tu-portfolio.dev](https://mariopxz.com)  
-[🐱 GitHub: @tuusuario](https://github.com/mariopxz)
+[🌐 mariopxz.com](https://mariopxz.com)  
+[🐱 GitHub: @mariopxz](https://github.com/mariopxz)
 
 ---
 
